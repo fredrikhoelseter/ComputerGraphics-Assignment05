@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Scene builder</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        <canvas id="canvas" width="600" height="400">
+            Please use a browser that supports "canvas"
+        </canvas>
+        <div>
+            <div>
+                <label for="translation-x">Position:</label>
+                <input type="text" id="translation-x" value="0" size="5px">
+                <input type="text" id="translation-y" value="0" size="5px">
+                <input type="text" id="translation-z" value="0" size="5px">
+            </div>
+            <div>
+                <label for="scale-x">Scale:</label>
+                <input type="text" id="scale-x" value="1" size="5px">
+                <input type="text" id="scale-y" value="1" size="5px">
+                <input type="text" id="scale-z" value="1" size="5px">
+            </div>
+            <div>
+                <label for="rotation-z">Rotation along z-axis (in deg):</label>
+                <input type="text" id="rotation-z" value="0.0" size="5px">
+            </div>
+            <div>
+                <label for="rgb-color">RGB:</label>
+                <input type="text" id="color-r" value="1" size="5px">
+                <input type="text" id="color-g" value="0" size="5px">
+                <input type="text" id="color-b" value="0" size="5px">
+            </div>
+            <div>
+                <label for="shape">Shape:</label>
+                <select name="shape" id="shape">
+                    <option value="quad">Quad</option>
+                    <option value="cube">Cube</option>
+                    <option value="sphere">Sphere</option>
+                    <option value="square-pyramid">Square Pyramid</option>
+                    <option value="cylinder">Cylinder</option>
+                    <option value="disc">Disc</option>
+                    <option value="cone">Cone</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <button type="button" id="add-button">ADD</button>
+            <button type="button" id="remove-button">REMOVE</button>
+            <button type="button" id="edit-button">EDIT</button>
+            <button type="button" id="clear-button">CLEAR</button>
+        </div>
+        <div>
+            <label for="objects">GameObjects</label>
+            <select multiple id="objects" size="20"></select>
+        </div>
+
+        <script src="lib/webgl-utils.js"></script>
+        <script src="lib/webgl-debug.js"></script>
+        <script src="lib/cuon-utils.js"></script>
+        <script src="lib/cuon-matrix.js"></script>
+        <script src="src/shaders/vertex.js"></script>
+        <script src="src/shaders/fragment.js"></script>
+        <script src="src/objects/quad.js"></script>
+        <script src="src/objects/cube.js"></script>
+        <script src="src/objects/sphere.js"></script>
+        <script src="src/objects/square-pyramid.js"></script>
+        <script src="src/objects/cylinder.js"></script>
+        <script src="src/objects/disc.js"></script>
+        <script src="src/objects/cone.js"></script>
+        <script src="src/scene.js"></script>
+        <script src="src/index.js"></script>
+    </body>
+</html>
